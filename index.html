@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎮 Jeu du Nombre Mystère</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header = En-tête du jeu avec titre et description -->
+      <header class="header">
+        <h1>🎮 Jeu du Nombre Mystère</h1>
+        <p class="subtitle">Trouvez le nombre secret entre 1 et 500</p>
+      </header>
+
+      <!-- Main Game Area = Zone principale avec tous les éléments interactifs -->
+      <main class="game-container">
+        <!-- Difficulty Selection -->
+        <div class="difficulty-section">
+          <label for="difficulty">Choisir la difficulté :</label>
+          <select id="difficulty" class="difficulty-select">
+            <option value="50">Facile (1-50)</option>
+            <option value="100" selected>Moyen (1-100)</option>
+            <option value="500">Difficile (1-500)</option>
+          </select> 
+        </div>
+
+        <!-- Game Input Section -->
+        <div class="input-section">
+          <label for="userInput">Entrez un nombre :</label>
+          <input
+            type="number"
+            id="userInput"
+            class="input-field"
+            placeholder="Votre nombre..."
+            min="1"
+          />
+          <button id="submitBtn" class="btn btn-primary">Tester</button>
+        </div>
+
+        <!-- Feedback Message -->
+        <div id="feedback" class="feedback-message"></div>
+
+        <!-- Game Stats -->
+        <div class="stats-section">
+          <div class="stat">
+            <span class="stat-label">Tentatives :</span>
+            <span id="attempts" class="stat-value">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Statut :</span>
+            <span id="status" class="stat-value status-playing"
+              >En cours...</span
+            >
+          </div>
+        </div>
+
+        <!-- Attempts History -->
+        <div class="history-section">
+          <h3>📋 Historique des essais</h3>
+          <ul id="historyList" class="history-list">
+            <li class="empty-message">Aucun essai pour le moment</li>
+          </ul>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="buttons-section">
+          <button id="resetBtn" class="btn btn-secondary">
+            🔄 Nouvelle Partie
+          </button>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>Bonne chance ! 🍀</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

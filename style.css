@@ -1,0 +1,394 @@
+/* ==================== RESET & GLOBAL STYLES ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ==================== CONTAINER ==================== */
+.container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 100%;
+  overflow: hidden;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== HEADER ==================== */
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2em;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 0.95em;
+  opacity: 0.9;
+}
+
+/* ==================== MAIN GAME CONTAINER ==================== */
+.game-container {
+  padding: 30px 20px;
+}
+
+/* ==================== DIFFICULTY SECTION ==================== */
+.difficulty-section {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.difficulty-section label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95em;
+}
+
+.difficulty-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: white;
+  color: #333;
+}
+
+.difficulty-select:hover {
+  border-color: #667eea;
+}
+
+.difficulty-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* ==================== INPUT SECTION ==================== */
+.input-section {
+  margin-bottom: 25px;
+}
+
+.input-section label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95em;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.input-field:hover {
+  border-color: #667eea;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input-field::placeholder {
+  color: #999;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  margin-bottom: 15px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  background: #f0f0f0;
+  color: #333;
+  border: 2px solid #ddd;
+  margin-top: 10px;
+}
+
+.btn-secondary:hover {
+  background: #e0e0e0;
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+/* ==================== FEEDBACK MESSAGE ==================== */
+.feedback-message {
+  min-height: 50px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  color: #666;
+}
+
+.feedback-message.too-high {
+  background: #ffe5e5;
+  color: #d32f2f;
+  border-left: 4px solid #d32f2f;
+}
+
+.feedback-message.too-low {
+  background: #e3f2fd;
+  color: #1976d2;
+  border-left: 4px solid #1976d2;
+}
+
+.feedback-message.correct {
+  background: #e8f5e9;
+  color: #388e3c;
+  border-left: 4px solid #388e3c;
+  animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.feedback-message.error {
+  background: #fff3e0;
+  color: #f57c00;
+  border-left: 4px solid #f57c00;
+}
+
+/* ==================== STATS SECTION ==================== */
+.stats-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.status-playing {
+  color: #ff9800;
+}
+
+.status-won {
+  color: #388e3c;
+}
+
+.status-lost {
+  color: #d32f2f;
+}
+
+/* ==================== HISTORY SECTION ==================== */
+.history-section {
+  margin-bottom: 25px;
+}
+
+.history-section h3 {
+  color: #333;
+  margin-bottom: 12px;
+  font-size: 1.05em;
+}
+
+.history-list {
+  list-style: none;
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+}
+
+.history-list li {
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  font-size: 0.95em;
+}
+
+.history-list li:last-child {
+  border-bottom: none;
+}
+
+.empty-message {
+  text-align: center;
+  color: #999;
+  padding: 20px 15px !important;
+  font-style: italic;
+}
+
+/* ==================== BUTTONS SECTION ==================== */
+.buttons-section {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+  background: #f5f5f5;
+  padding: 15px;
+  text-align: center;
+  color: #666;
+  font-size: 0.9em;
+  border-top: 1px solid #eee;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 600px) {
+  .container {
+    border-radius: 10px;
+  }
+
+  .header h1 {
+    font-size: 1.6em;
+  }
+
+  .header {
+    padding: 20px 15px;
+  }
+
+  .game-container {
+    padding: 20px 15px;
+  }
+
+  .btn {
+    padding: 11px 18px;
+    font-size: 0.95em;
+  }
+
+  .stats-section {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .stat-value {
+    font-size: 1.5em;
+  }
+}
+
+/* ==================== SCROLLBAR STYLING ==================== */
+.history-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.history-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 10px;
+}
+
+.history-list::-webkit-scrollbar-thumb:hover {
+  background: #764ba2;
+}
