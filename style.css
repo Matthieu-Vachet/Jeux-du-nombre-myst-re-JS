@@ -211,19 +211,16 @@ body {
 .feedback-message.too-high {
   background: #ffe5e5;
   color: #d32f2f;
-  border-left: 4px solid #d32f2f;
 }
 
 .feedback-message.too-low {
   background: #e3f2fd;
   color: #1976d2;
-  border-left: 4px solid #1976d2;
 }
 
 .feedback-message.correct {
   background: #e8f5e9;
   color: #388e3c;
-  border-left: 4px solid #388e3c;
   animation: pulse 0.5s ease;
 }
 
@@ -237,10 +234,15 @@ body {
   }
 }
 
+.feedback-message.info {
+  background: #fafffa5e;
+  color: #040504;
+  animation: pulse 0.5s ease;
+}
+
 .feedback-message.error {
   background: #fff3e0;
   color: #f57c00;
-  border-left: 4px solid #f57c00;
 }
 
 /* ==================== STATS SECTION ==================== */
@@ -301,7 +303,7 @@ body {
   background: #f9f9f9;
   border-radius: 8px;
   padding: 0;
-  max-height: 200px;
+  max-height: 150px;
   overflow-y: auto;
   border: 1px solid #eee;
 }
